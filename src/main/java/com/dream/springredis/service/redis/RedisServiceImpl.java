@@ -1,6 +1,7 @@
 package com.dream.springredis.service.redis;
 
-import net.minidev.json.JSONUtil;
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.redis.connection.RedisConnection;
@@ -47,15 +48,15 @@ public class RedisServiceImpl implements IRedisService {
 
     @Override
     public <T> boolean setList(String key, List<T> list) {
-        String value = JSONUtil.toJson(list);
+        String value = JSONObject.toJSONString(list);
         return set(key,value);
     }
 
     @Override
-    public <T> List<T> getList(String key,Class<T> clz) {
+    public <T> List<T> getList(String key, Class<T> clz) {
         String json = get(key);
         if(json!=null){
-            List<T> list = JSONUtil.toList(json, clz);
+            List<T> list = JSONObject.parseArray(json, clz);
             return list;
         }
         return null;
@@ -63,7 +64,7 @@ public class RedisServiceImpl implements IRedisService {
 
     @Override
     public long lpush(final String key, Object obj) {
-        final String value = JSONUtil.toJson(obj);
+        final String value = JSONObject.toJSONString(obj);
         long result = redisTemplate.execute(new RedisCallback<Long>() {
             @Override
             public Long doInRedis(RedisConnection connection) throws DataAccessException {
@@ -77,7 +78,7 @@ public class RedisServiceImpl implements IRedisService {
 
     @Override
     public long rpush(final String key, Object obj) {
-        final String value = JSONUtil.toJson(obj);
+        final String value = JSONObject.toJSONString(obj);
         long result = redisTemplate.execute(new RedisCallback<Long>() {
             @Override
             public Long doInRedis(RedisConnection connection) throws DataAccessException {
