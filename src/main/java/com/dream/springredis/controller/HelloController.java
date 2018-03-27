@@ -1,29 +1,28 @@
 package com.dream.springredis.controller;
 
+import com.dream.springredis.util.JedisPoolUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.StringRedisTemplate;
-import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.io.IOException;
 
 @RestController
 public class HelloController {
     @Autowired
-    private StringRedisTemplate template;
+    private JedisPoolUtil cacheUtil;
 
     @RequestMapping("/")
-    // Define the Hello World controller.
     public String hello() {
-
-        ValueOperations<String, String> ops = this.template.opsForValue();
-
-        // Add a Hello World string to your cache.
         String key = "greeting";
-        if (!this.template.hasKey(key)) {
-            ops.set(key, "Hello World!");
+        try {
+            String value = cacheUtil.getStr(key);
+            return value;
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         }
-
-        // Return the string from your cache.
-        return ops.get(key);
+        return "";
     }
 }
