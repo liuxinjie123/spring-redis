@@ -1,4 +1,4 @@
-package com.dream.springredis.domain;
+package com.dream.springredis.dto;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 @Data
 @NoArgsConstructor
-public class User implements Serializable {
+public class UserDTO implements Serializable {
     private String id;
     private String username;
     private String password;
@@ -17,7 +17,7 @@ public class User implements Serializable {
     private String email;
     private String desc;
 
-    public User(String id, String name, int age) {
+    public UserDTO(String id, String name, int age) {
         this.id = id;
         this.name = name;
         this.age = age;

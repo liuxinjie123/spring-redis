@@ -1,4 +1,4 @@
-package com.dream.springredis.domain;
+package com.dream.springredis.dto;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 @Data
 @NoArgsConstructor
-public class City implements Serializable {
+public class CityDTO implements Serializable {
     private String provinceCode;
     private String provinceName;
     private String cityCode;
