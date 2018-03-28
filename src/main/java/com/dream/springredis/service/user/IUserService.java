@@ -1,12 +1,10 @@
 package com.dream.springredis.service.user;
 
-import com.dream.springredis.dao.UserDAO;
-
-import java.util.List;
+import com.dream.springredis.dto.UserDTO;
 
 public interface IUserService {
 
-    public UserDAO getById();
+    boolean addUser(UserDTO user);
 
-    List<UserDAO> getAll();
+    UserDTO getById(int id);
 }

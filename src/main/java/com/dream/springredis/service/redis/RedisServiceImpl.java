@@ -65,7 +65,7 @@ public class RedisServiceImpl implements IRedisService {
     }
 
     @Override
-    public long lpush(final String key, Object obj) {
+    public long lPush(final String key, Object obj) {
         final String value = JSONObject.toJSONString(obj);
         long result = redisTemplate.execute(new RedisCallback<Long>() {
             @Override
@@ -79,7 +79,7 @@ public class RedisServiceImpl implements IRedisService {
     }
 
     @Override
-    public long rpush(final String key, Object obj) {
+    public long rPush(final String key, Object obj) {
         final String value = JSONObject.toJSONString(obj);
         long result = redisTemplate.execute(new RedisCallback<Long>() {
             @Override
@@ -93,7 +93,7 @@ public class RedisServiceImpl implements IRedisService {
     }
 
     @Override
-    public String lpop(final String key) {
+    public String lPop(final String key) {
         String result = redisTemplate.execute(new RedisCallback<String>() {
             @Override
             public String doInRedis(RedisConnection connection) throws DataAccessException {

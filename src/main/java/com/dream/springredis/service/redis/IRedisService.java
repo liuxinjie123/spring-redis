@@ -14,10 +14,10 @@ public interface IRedisService {
 
     <T> List<T> getList(String key, Class<T> clz);
 
-    long lpush(String key, Object obj);
+    long lPush(String key, Object obj);
 
-    long rpush(String key, Object obj);
+    long rPush(String key, Object obj);
 
-    String lpop(String key);
+    String lPop(String key);
 
 }

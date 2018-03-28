@@ -3,11 +3,13 @@ package com.dream.springredis.controller;
 import com.dream.springredis.dao.UserDAO;
 import com.dream.springredis.dto.Constants;
 import com.dream.springredis.dto.ResultDTO;
+import com.dream.springredis.dto.UserDTO;
 import com.dream.springredis.service.redis.IRedisService;
 import com.dream.springredis.service.user.IUserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,10 +22,10 @@ public class ExampleController {
     @Autowired
     private IRedisService redisService;
 
-    @GetMapping("/users")
-    public ResultDTO users() {
-        List<UserDAO> users = userService.getAll();
-        return new ResultDTO(Constants.RETURN_SUCCESS, Constants.MSG_SUCCESS, users);
+    @GetMapping("/user/{id}")
+    public ResultDTO users(@PathVariable("id") int id) {
+        UserDTO user = userService.getById(id);
+        return new ResultDTO(Constants.RETURN_SUCCESS, Constants.MSG_SUCCESS, user);
     }
 
     @PostMapping("/redis/set")
