@@ -1,4 +1,4 @@
-package com.dream.springredis.dto;
+package com.dream.spring.redis.dto;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -1,4 +1,4 @@
-package com.dream.springredis.service.redis;
+package com.dream.spring.redis.service.redis;
 
 import java.util.List;
 

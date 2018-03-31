@@ -1,18 +1,14 @@
-package com.dream.springredis.controller;
+package com.dream.spring.redis.controller.example;
 
-import com.dream.springredis.dao.UserDAO;
-import com.dream.springredis.dto.Constants;
-import com.dream.springredis.dto.ResultDTO;
-import com.dream.springredis.dto.UserDTO;
-import com.dream.springredis.service.redis.IRedisService;
-import com.dream.springredis.service.user.IUserService;
+import com.dream.spring.redis.dto.Constants;
+import com.dream.spring.redis.dto.ResultDTO;
+import com.dream.spring.redis.dto.UserDTO;
+import com.dream.spring.redis.service.redis.IRedisService;
+import com.dream.spring.redis.service.user.IUserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 public class ExampleController {

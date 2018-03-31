@@ -1,4 +1,4 @@
-package com.dream.springredis.service.redis;
+package com.dream.spring.redis.service.redis;
 
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;

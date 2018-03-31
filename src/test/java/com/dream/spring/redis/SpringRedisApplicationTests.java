@@ -1,4 +1,4 @@
-package com.dream.springredis;
+package com.dream.spring.redis;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

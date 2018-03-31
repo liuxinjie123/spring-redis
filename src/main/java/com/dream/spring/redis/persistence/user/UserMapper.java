@@ -1,6 +1,6 @@
-package com.dream.springredis.persistence.user;
+package com.dream.spring.redis.persistence.user;
 
-import com.dream.springredis.dao.UserDAO;
+import com.dream.spring.redis.dao.UserDAO;
 import org.apache.ibatis.annotations.*;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;

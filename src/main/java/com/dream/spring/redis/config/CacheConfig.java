@@ -1,4 +1,4 @@
-package com.dream.springredis.config;
+package com.dream.spring.redis.config;
 
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;

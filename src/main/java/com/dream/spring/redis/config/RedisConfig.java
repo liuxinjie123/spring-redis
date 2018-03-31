@@ -1,4 +1,4 @@
-package com.dream.springredis.config;
+package com.dream.spring.redis.config;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

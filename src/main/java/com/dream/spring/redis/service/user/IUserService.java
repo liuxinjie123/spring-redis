@@ -1,6 +1,6 @@
-package com.dream.springredis.service.user;
+package com.dream.spring.redis.service.user;
 
-import com.dream.springredis.dto.UserDTO;
+import com.dream.spring.redis.dto.UserDTO;
 
 public interface IUserService {
 

@@ -1,4 +1,4 @@
-package com.dream.springredis.dto;
+package com.dream.spring.redis.dto;
 
 public class Constants {
     public static final String RETURN_SUCCESS = "000000";
